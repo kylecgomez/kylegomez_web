@@ -1,0 +1,16 @@
+.statusBadge {
+  display: inline-block;
+  font-size: 11px;
+  padding: 3px 9px;
+  border-radius: 4px;
+  background: #fef3c7;
+  color: #92400e;
+  border: 0.5px solid #fde68a;
+  white-space: nowrap;
+}
+
+.planned {
+  background: var(--color-surface);
+  color: var(--color-text-tertiary);
+  border-color: var(--color-border);
+}

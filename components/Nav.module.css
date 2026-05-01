@@ -1,0 +1,44 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 3rem;
+}
+
+.logo {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.links a {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  transition: color 0.15s;
+}
+
+.links a:hover,
+.links a.active {
+  color: var(--color-text-primary);
+}
+
+.contact span {
+  display: inline-block;
+  transition: transform 0.15s;
+}
+
+.contact:hover span {
+  transform: translate(1px, -1px);
+}
+
+@media (max-width: 600px) {
+  .links {
+    gap: 16px;
+  }
+}

@@ -1,0 +1,265 @@
+.main {
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+/* Hero */
+.hero {
+  padding-bottom: 4rem;
+  border-bottom: 0.5px solid var(--color-border);
+}
+
+.heroLabel {
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.heroName {
+  font-family: var(--font-serif);
+  font-size: 48px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+
+.heroDesc {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 2rem;
+}
+
+.heroActions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  border: 0.5px solid var(--color-text-primary);
+  background: var(--color-text-primary);
+  color: var(--color-bg);
+  transition: opacity 0.15s;
+}
+
+.btnPrimary:hover {
+  opacity: 0.8;
+}
+
+.btnSecondary {
+  font-size: 13px;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  border: 0.5px solid var(--color-border-strong);
+  background: transparent;
+  color: var(--color-text-primary);
+  transition: background 0.15s;
+}
+
+.btnSecondary:hover {
+  background: var(--color-surface);
+}
+
+/* Sections */
+.section {
+  padding: 3rem 0;
+  border-bottom: 0.5px solid var(--color-border);
+}
+
+.sectionLabel {
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+/* Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.timelineItem {
+  display: grid;
+  grid-template-columns: 148px 1fr;
+  gap: 24px;
+  padding: 1.5rem 0;
+  border-top: 0.5px solid var(--color-border);
+}
+
+.timelineItem:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.timelineDate {
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+  padding-top: 2px;
+  line-height: 1.6;
+}
+
+.timelineRole {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin-bottom: 3px;
+}
+
+.timelineCompany {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+}
+
+.timelineDesc {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* Skills */
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.skillGroup {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+}
+
+.skillGroupLabel {
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+.skillTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skillTag {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  background: var(--color-bg);
+  border: 0.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 4px 10px;
+}
+
+/* Blog */
+.blogGrid {
+  display: flex;
+  flex-direction: column;
+}
+
+.blogItem {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: start;
+  padding: 1.25rem 0;
+  border-top: 0.5px solid var(--color-border);
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.blogItem:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.blogItem:hover {
+  opacity: 0.6;
+}
+
+.blogTag {
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 5px;
+}
+
+.blogTitle {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  line-height: 1.4;
+}
+
+.blogDate {
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+  white-space: nowrap;
+  padding-top: 2px;
+}
+
+/* Footer */
+.footer {
+  padding-top: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footerCopy {
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+}
+
+.footerLinks {
+  display: flex;
+  gap: 16px;
+}
+
+.footerLinks a {
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+  transition: color 0.15s;
+}
+
+.footerLinks a:hover {
+  color: var(--color-text-primary);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .heroName {
+    font-size: 36px;
+  }
+
+  .timelineItem {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .timelineDate {
+    padding-top: 0;
+  }
+}
