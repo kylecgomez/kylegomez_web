@@ -12,7 +12,7 @@ export default function Nav() {
         <Link href="/" className={pathname === '/' ? styles.active : ''}>Experience</Link>
         <Link href="/#writing">Writing</Link>
         <Link href="/projects" className={pathname === '/projects' ? styles.active : ''}>Projects</Link>
-        <a href="mailto:kylecgomez@gmail.com" className={styles.contact}>Contact <span>↗</span></a>
+        <a href="https://linkedin.com/in/kylecgomez" target="_blank" rel="noopener noreferrer" className={styles.contact}>Contact <span>↗</span></a>
       </div>
     </nav>
   );
