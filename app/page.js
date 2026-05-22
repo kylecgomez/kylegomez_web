@@ -1,89 +1,67 @@
 import Nav from '@/components/Nav';
-import styles from './page.module.css';
+import styles from './projects.module.css';
+import homeStyles from '../page.module.css';
 
-const experience = [
-  { dates: '2022 — Present', role: 'Technical Project Manager', company: 'Feedonomics', desc: 'Leading cross-functional programs across feed optimization and digital advertising infrastructure. Driving delivery at scale across engineering and product teams.' },
-  { dates: '2019 — 2022', role: 'Trust & Safety Operations', company: 'Accenture · Embedded at Meta', desc: 'Embedded within WhatsApp and Facebook enforcement teams, focusing on exploitation-specific policy enforcement and operational trust & safety programs.' },
-  { dates: '2018 — 2019', role: 'Data & IP Operations', company: 'BCForward', desc: 'Managed data and intellectual property workflows, building operational programs across structured data pipelines.' },
+const inProgress = [
+  { name: 'Prediction Market Terminal', desc: 'A real-time trading terminal for Kalshi prediction markets built with Next.js. Features live order book depth, yes/no prices, portfolio positions, and a BTC price chart sourced from Coinbase. Authenticated via RSA-PSS request signing.', status: 'In progress', link: 'https://github.com/kylecgomez/prediction-market-terminal' },
+  { name: 'Roguelike Pinball', desc: 'An indie game built in Godot 4 combining roguelike run mechanics with pinball physics. Two tables, 20-30 upgrades, and 3-5 run types targeting a 1.0 release.', status: 'In progress', link: null },
+  { name: 'kylegomez.com', desc: 'This site built on Next.js, hosted on Vercel, designed to showcase my work and writing as a personal brand platform.', status: 'In progress', link: null },
 ];
 
-const skills = [
-  { label: 'Program Management', tags: ['Roadmapping', 'OKRs', 'Agile / Scrum', 'Cross-functional delivery'] },
-  { label: 'Trust & Safety', tags: ['Policy enforcement', 'Exploitation ops', 'Risk frameworks', 'Content moderation'] },
-  { label: 'Technical', tags: ['SQL', 'Python', 'Data pipelines', 'Feed optimization'] },
-  { label: 'Platforms & Tools', tags: ['Jira', 'Confluence', 'Looker', 'Google Ads'] },
+const planned = [
+  { name: 'AI SaaS', desc: 'Exploring a SaaS product leveraging AI agents for workflow automation. Early concept stage covering space/robotics or analytics tooling.', status: 'Planned', link: null },
+  { name: 'Content - YouTube / TikTok', desc: 'Documenting personal growth, career strategy, and life as a PM. Building in public as a vehicle for accountability and audience.', status: 'Planned', link: null },
 ];
 
-const writing = [
-  { tag: 'Trust & Safety', title: 'What exploitation enforcement taught me about systems thinking', date: 'Apr 2025' },
-  { tag: 'Program Management', title: 'The quiet skill every PM needs: knowing what not to ship', date: 'Mar 2025' },
-  { tag: 'Career', title: 'From Paris to Austin: rebuilding intentionally', date: 'Feb 2025' },
-];
-
-export default function Home() {
+export default function Projects() {
   return (
-    <main className={styles.main}>
-      <div className={styles.container}>
+    <main className={homeStyles.main}>
+      <div className={homeStyles.container}>
         <Nav />
-        <section className={styles.hero}>
-          <p className={styles.heroLabel}>Project Manager · Austin, TX</p>
-          <h1 className={styles.heroName}>Building systems<br />that scale.</h1>
-          <p className={styles.heroDesc}>I'm Kyle — a Project Manager with 7+ years at the intersection of digital advertising, trust & safety, and data operations. I turn complex, ambiguous problems into programs that ship.</p>
-          <div className={styles.heroActions}>
-            <a href="/kyle-gomez-resume.pdf" download className={styles.btnPrimary}>Download resume</a>
-            <a href="mailto:kylecgomez@gmail.com" className={styles.btnSecondary}>Get in touch</a>
-          </div>
+        <section className={homeStyles.hero}>
+          <p className={homeStyles.heroLabel}>Projects</p>
+          <h1 className={homeStyles.heroName}>Things I'm<br />building.</h1>
+          <p className={homeStyles.heroDesc}>A collection of side projects, experiments, and ideas in progress spanning AI tooling, indie games, and personal systems.</p>
         </section>
-        <section className={styles.section}>
-          <p className={styles.sectionLabel}>Experience</p>
-          <div className={styles.timeline}>
-            {experience.map((item, i) => (
-              <div key={i} className={styles.timelineItem}>
-                <p className={styles.timelineDate}>{item.dates}</p>
+        <section className={homeStyles.section}>
+          <p className={homeStyles.sectionLabel}>In progress</p>
+          <div className={homeStyles.timeline}>
+            {inProgress.map((p, i) => (
+              <div key={i} className={homeStyles.timelineItem}>
+                <div><span className={styles.statusBadge}>{p.status}</span></div>
                 <div>
-                  <p className={styles.timelineRole}>{item.role}</p>
-                  <p className={styles.timelineCompany}>{item.company}</p>
-                  <p className={styles.timelineDesc}>{item.desc}</p>
+                  <p className={homeStyles.timelineRole}>{p.name}</p>
+                  <p className={homeStyles.timelineDesc}>{p.desc}</p>
+                  {p.link && (
+                    <a href={p.link} target="_blank" rel="noopener noreferrer" className={styles.projectLink}>
+                      View on GitHub ↗
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
           </div>
         </section>
-        <section className={styles.section}>
-          <p className={styles.sectionLabel}>Skills</p>
-          <div className={styles.skillsGrid}>
-            {skills.map((group, i) => (
-              <div key={i} className={styles.skillGroup}>
-                <p className={styles.skillGroupLabel}>{group.label}</p>
-                <div className={styles.skillTags}>
-                  {group.tags.map((tag, j) => (
-                    <span key={j} className={styles.skillTag}>{tag}</span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-        <section className={styles.section} id="writing">
-          <p className={styles.sectionLabel}>Writing</p>
-          <div className={styles.blogGrid}>
-            {writing.map((post, i) => (
-              <div key={i} className={styles.blogItem}>
+        <section className={homeStyles.section}>
+          <p className={homeStyles.sectionLabel}>On deck</p>
+          <div className={homeStyles.timeline}>
+            {planned.map((p, i) => (
+              <div key={i} className={homeStyles.timelineItem}>
+                <div><span className={`${styles.statusBadge} ${styles.planned}`}>{p.status}</span></div>
                 <div>
-                  <p className={styles.blogTag}>{post.tag}</p>
-                  <p className={styles.blogTitle}>{post.title}</p>
+                  <p className={homeStyles.timelineRole}>{p.name}</p>
+                  <p className={homeStyles.timelineDesc}>{p.desc}</p>
                 </div>
-                <p className={styles.blogDate}>{post.date}</p>
               </div>
             ))}
           </div>
         </section>
-        <footer className={styles.footer}>
-          <span className={styles.footerCopy}>© 2025 Kyle Gomez</span>
-          <div className={styles.footerLinks}>
+        <footer className={homeStyles.footer}>
+          <span className={homeStyles.footerCopy}>© 2025 Kyle Gomez</span>
+          <div className={homeStyles.footerLinks}>
             <a href="https://linkedin.com/in/kylemitchellgomez" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="mailto:kylecgomez@gmail.com">Email</a>
-            <a href="https://github.com/kylegomez" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://github.com/kylecgomez" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
         </footer>
       </div>
